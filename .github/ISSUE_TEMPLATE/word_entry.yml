@@ -1,0 +1,58 @@
+name: 📘 단어 추가/수정
+description: 단어장에 단어를 추가하거나 뜻/예문을 고칠 때 사용합니다
+title: "[WORD] "
+labels: ["data"]
+body:
+  - type: input
+    id: word
+    attributes:
+      label: 단어 (영문)
+      placeholder: "예: abandon"
+    validations:
+      required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: 작업 종류
+      options:
+        - 추가
+        - 뜻 수정
+        - 예문 수정
+        - 삭제
+    validations:
+      required: true
+  - type: dropdown
+    id: pos
+    attributes:
+      label: 품사
+      options:
+        - noun (명사)
+        - verb (동사)
+        - adjective (형용사)
+        - adverb (부사)
+        - 기타
+    validations:
+      required: true
+  - type: textarea
+    id: meaning
+    attributes:
+      label: 뜻 (한국어)
+      description: 여러 뜻이면 쉼표로 구분해 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: 예문 (선택)
+  - type: input
+    id: source
+    attributes:
+      label: 출처 (선택)
+      description: 예문이나 뜻의 출처가 있다면 적어주세요.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 확인 사항
+      options:
+        - label: 같은 단어가 이미 단어장에 있는지 검색했습니다.
+          required: true
